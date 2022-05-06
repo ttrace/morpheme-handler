@@ -1,0 +1,84 @@
+{
+  "name": "morpheme-handler",
+  "version": "0.0.1-alpha",
+  "publisher": "TaiyoFujii",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "icon": "",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "main": "./out/web/extension.js",
+  "dependencies": {
+    "@types/kuromoji": "^0.1.1",
+    "kuromoji": "^0.1.2"
+  },
+  "scripts": {
+    "compile-web": "webpack",
+    "lint": "eslint src --ext ts",
+    "package-web": "webpack --mode production --devtool hidden-source-map",
+    "pretest": "npm run compile-web && npm run lint",
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
+    "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
+    "vscode:prepublish": "npm run package-web",
+    "watch-web": "webpack --watch"
+  },
+  "activationEvents": [
+    "onLanguage:novel",
+    "onLanguage:markdown",
+    "onLanguage:plaintext"
+  ],
+  "contributes": {
+    "commands": [],
+    "configuration": {},
+    "menus": {},
+    "semanticTokenTypes": [
+      {
+        "id": "proper-noun",
+        "superType": "noun",
+        "description": "固有名詞"
+      }
+    ],
+    "semanticTokenModifiers": [
+      {
+        "id": "native",
+        "description": "Annotates a symbol that is implemented natively"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^17.0.30",
+    "@types/sinon": "^10.0.11",
+    "@types/vscode": "^1.66.0",
+    "@types/ws": "^8.5.3",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "@types/webpack-env": "^1.16.4",
+    "@vscode/test-web": "^0.0.24",
+    "eslint": "^8.14.0",
+    "glob": "^8.0.1",
+    "mocha": "^9.2.2",
+    "path": "^0.12.7",
+    "typescript": "^4.6.4",
+    "utf-8-validate": "^5.0.9",
+    "util": "^0.12.4",
+    "vscode-test": "^1.5.2",
+    "webpack-cli": "^4.8.0",
+    "webpack": "^5.52.1",
+    "webpack-env": "^0.8.0",
+    "ts-loader": "^9.2.5"
+  },
+  "description": "日本語の形態素解析をVS Codeで用いるための機能拡張です",
+  "bugs": {
+    "url": "https://github.com/ttrace/vscode-language-japanese-novel/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "MIT"
+}
