@@ -28,10 +28,14 @@
   "activationEvents": [
     "onLanguage:novel",
     "onLanguage:markdown",
-    "onLanguage:plaintext"
+    "onLanguage:plaintext",
+    "onCommand:morphemeHandler.showMorpheme"
   ],
   "contributes": {
-    "commands": [],
+    "commands": [{
+      "command": "Morpheme-handler.showMorpheme",
+      "title": "Morpheme:品詞表示"
+    }],
     "configuration": {},
     "menus": {},
     "semanticTokenTypes": [

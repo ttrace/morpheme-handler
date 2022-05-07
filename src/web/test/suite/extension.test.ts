@@ -7,7 +7,7 @@
 //import * as myExtension from '../../extension';
 
 
-suite("japanese-word-handler", () => {
+suite("morpheme-handler", () => {
     /*
     // Prepare utility functions and constants
     const setText = async function (editor: TextEditor, text: string) {

@@ -4,6 +4,7 @@ require('mocha/mocha');
 export function run(): Promise<void> {
 
     return new Promise((c, e) => {
+        /*
         mocha.setup({
             ui: 'tdd',
             reporter: undefined
@@ -26,5 +27,7 @@ export function run(): Promise<void> {
             console.error(err);
             e(err);
         }
+        */
     });
+
 }
